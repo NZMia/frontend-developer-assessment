@@ -1,5 +1,5 @@
 import { waitFor } from '@testing-library/react';
-import  {
+import {
   getTodoItems,
   addTodoItem,
   updateTodoItemReduce,
@@ -13,7 +13,7 @@ describe('todoSlice', () => {
   let store: typeof rootStore;
 
   beforeEach(() => {
-    store = rootStore
+    store = rootStore;
   });
 
   it('should get todo items correctly', () => {
@@ -105,7 +105,7 @@ describe('todoSlice', () => {
   });
 
   it('should render an error message', async () => {
-    const essMsg: string = 'An error occurred.'
+    const essMsg: string = 'An error occurred.';
     store.dispatch(setErrorMsg(essMsg));
     await waitFor(() => {
       expect(store.getState().todo.errorMsg).toEqual(essMsg);

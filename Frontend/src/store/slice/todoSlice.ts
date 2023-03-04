@@ -10,10 +10,10 @@ const todoSlice = createSlice({
 
   reducers: {
     getTodoItems: (state, action:PayloadAction<ITodoItem[]>) => {
-      state.todoItems = action.payload
+      state.todoItems = action.payload;
     },
     addTodoItem: (state, action: PayloadAction<ITodoItem>) => {
-      state.todoItems = [...state.todoItems, action.payload];;
+      state.todoItems = [...state.todoItems, action.payload];
     },
     updateTodoItemReduce: (state, action: PayloadAction<ITodoItem>) => {
       state.todoItems = state.todoItems.map(todoItem =>
@@ -24,7 +24,7 @@ const todoSlice = createSlice({
       state.todoItems = state.todoItems.filter((todoItem) => todoItem.id !== action.payload);
     },
     setErrorMsg: (state, action:PayloadAction<string>) => {
-      state.errorMsg = action.payload
+      state.errorMsg = action.payload;
     }
   },
 })

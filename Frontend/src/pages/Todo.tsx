@@ -1,119 +1,122 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, Spin, List, Alert } from 'antd';
-import { RootState } from "../store/store";
-import { IBaseTodoItem, ITodoItem } from "../ts/interface";
-import { 
+import { RootState } from '../store/store';
+import { IBaseTodoItem, ITodoItem } from '../ts/interface';
+import {
   useGetTodoItemsQuery,
   useCreateTodoItemMutation,
   useUpdateTodoItemMutation,
-  useDeleteTodoItemMutation
-} from "../store/api/todoApi";
+  useDeleteTodoItemMutation,
+} from '../store/api/todoApi';
 import { 
-  getTodoItems, 
+  getTodoItems,
   addTodoItem,
   updateTodoItemReduce,
   deleteTodoItemReduce
-} from "../store/slice/todoSlice";
+} from '../store/slice/todoSlice';
 
-import TodoAdd from "../components/TodoAdd";
-import TodoItem from "../components/TodoItem";
+import TodoAdd from '../components/TodoAdd';
+import TodoItem from '../components/TodoItem';
 
 const ToDoPage: React.FC = () => {
+  const [errorMsg, setErrorMsg] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
+  const { todoItems } = useSelector((state: RootState) => state.todo);
+  const dispatch = useDispatch();
 
-  const [ errorMsg, setErrorMsg ] = useState<string>('')
-  const [ inputValue, setInputValue ] = useState<string>('');
-  const { todoItems } = useSelector((state: RootState) => state.todo)
-  const dispatch = useDispatch()
-
-  const {
-    data: todoList =[],
+  const { 
+    data: todoList = [],
     isSuccess,
     isLoading,
     refetch
   } = useGetTodoItemsQuery();
 
-  const [ createTodoItem ] = useCreateTodoItemMutation()
-  const [ updateTodoItem ] = useUpdateTodoItemMutation();
-  const [ deleteTodoItem ] = useDeleteTodoItemMutation();
+  const [createTodoItem] = useCreateTodoItemMutation();
+  const [updateTodoItem] = useUpdateTodoItemMutation();
+  const [deleteTodoItem] = useDeleteTodoItemMutation();
 
   useEffect(() => {
-    if(isSuccess) {
-      dispatch(getTodoItems(todoList))
+    if (isSuccess) {
+      dispatch(getTodoItems(todoList));
     }
-  }, [todoList, dispatch, isSuccess])
+  }, [todoList, dispatch, isSuccess]);
 
   console.log('todoList:', todoList);
-  
+
   const handleInputChange = (value: string) => {
     setInputValue(value);
-    setErrorMsg('')
-  }
+    setErrorMsg('');
+  };
 
   const handleAddTodoItem = (e: React.MouseEvent) => {
     e.preventDefault();
-    const todoItem:IBaseTodoItem = {
+    const todoItem: IBaseTodoItem = {
       description: inputValue,
       completed: false,
-    }
+    };
 
     createTodoItem(todoItem)
       .unwrap()
       .then((payload) => addTodoItem(payload))
       .catch((error) => setErrorMsg(`${inputValue}: ${error.data}`));
-    
-    refetch()
-  }
-  const handleUpdate = (id: string, description: string, isCompleted: boolean) => {    
+
+    refetch();
+  };
+  const handleUpdate = (id: string, description: string, isCompleted: boolean) => {
     const updatedItem: ITodoItem = {
       id: id,
       description: description,
-      completed: isCompleted
-    }
-  
+      completed: isCompleted,
+    };
+
     updateTodoItem(updatedItem)
       .unwrap()
       .then((payload: ITodoItem) => updateTodoItemReduce(payload))
-      .catch((error) => setErrorMsg(`${description}: ${error.data}`));;
+      .catch((error) => setErrorMsg(`${description}: ${error.data}`));
 
-      refetch()
-  }  
+    refetch();
+  };
 
   const handleDelete = (id: string) => {
     deleteTodoItem(id)
       .unwrap()
       .then((payload) => deleteTodoItemReduce(payload))
       .catch((error) => setErrorMsg(error.data));
-    refetch()
-  }
+    refetch();
+  };
 
-  if(isLoading) {
-    return <div className="todo__page"><Spin size="large" /></div>
+  if (isLoading) {
+    return (
+      <div className='todo__page'>
+        <Spin size='large' />
+      </div>
+    );
   }
 
   return (
-    <div className="todo__page">
-      <TodoAdd 
-        onInputChange = {handleInputChange}
-        button={<Button type='text' onClick={handleAddTodoItem}>ADD</Button>}
-        />
-      {
-        errorMsg &&
-        <Alert message={errorMsg} type="error" showIcon />
-      }
+    <div className='todo__page'>
+      <TodoAdd
+        onInputChange={handleInputChange}
+        button={
+          <Button type='text' onClick={handleAddTodoItem}>
+            ADD
+          </Button>
+        }
+      />
+      {errorMsg && <Alert message={errorMsg} type='error' showIcon />}
       <List
         bordered
         dataSource={todoItems}
         renderItem={(todoItem: ITodoItem) => (
-          <TodoItem
+          <TodoItem 
             todoItem={todoItem}
             handleUpdate={handleUpdate}
-            handleDelete={handleDelete}
-          />
+            handleDelete={handleDelete} />
         )}
-      />  
+      />
     </div>
-  )
-}
+  );
+};
 
-export default ToDoPage
+export default ToDoPage;

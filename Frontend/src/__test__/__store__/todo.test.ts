@@ -5,9 +5,9 @@ import  {
   updateTodoItemReduce,
   deleteTodoItemReduce,
   setErrorMsg,
-} from '../store/slice/todoSlice';
-import { ITodoItem } from '../ts/interface';
-import { rootStore } from '../store/store';
+} from '../../store/slice/todoSlice';
+import { ITodoItem } from '../../ts/interface';
+import { rootStore } from '../../store/store';
 
 describe('todoSlice', () => {
   let store: typeof rootStore;

@@ -1,22 +1,79 @@
-# Developer Assessment
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=plastic)](https://github.com/prettier/prettier)  
+[![code commit rule: commitlint](https://img.shields.io/badge/code_commite-commitlint-ff69b4.svg?style=plastic)](https://github.com/conventional-changelog/commitlint)
 
-This repository contains code used in the interview process for developers joining the Front-end Practice at ClearPoint.
+# TODO LIST
 
-There are two parts to this solution and depending on the type of role you are applying for you will be asked to contribute to one or both areas.
-The application is a simple to-do list that allows a user to create items in a list and mark them as complete.
-It is a React-based front end application that uses a NodeJS API at the backend to facilitate using and persisting items in this to-do list.
-<br/><br/>
+![development: DONE](https://img.shields.io/badge/development-DONE-informational.svg?style=plastic)
 
-For this exercise you are asked to complete the requirements to enhance the UI functionality in the **Frontend** folder.
-The front end functionality requires the following to be added:
 
-1. The ability to surface any errors from the backend API in the UI
-2. The ability to mark an item in the to-do list as complete
-3. Add unit tests to cover the new functionality using a framework of your choice
+https://user-images.githubusercontent.com/10533181/222932691-47826433-ab4c-426c-a963-e53e8f474b55.mov
 
-<br/>
-Remember that *maintainability and clarity* is key in your solution. 
-You are welcome to use comments in the code to outline any assumptions you might make and/or outline your thinking at various points.
-Once completed you can either push the completed solution to your own repo and send us the link.
-<br/><br/>
-We look forward to seeing your submission and have fun!
+
+### User Stories
+
+---
+
+- [x] The ability to surface any errors from the backend API in the UI
+- [x] The ability to mark an item in the to-do list as complete
+- [x] Add unit tests to cover the new functionality using a framework of your choice
+
+
+### Installation
+
+Installation is handle via [npm](https://docs.npmjs.com/)
+
+To create a new project based from this repo, simply run:
+
+#### Backend  
+```shell
+cd Backend/TodoList.Api/
+npm i
+```
+#### FrontEnd  
+```shell
+cd Frontend
+npm i
+```
+---
+
+### Running
+
+#### Backend  
+```shell
+cd Backend/TodoList.Api/
+npm run dev
+
+
+Runs the app in the development mode.
+Listening on port 4000
+```
+
+#### FrontEnd  
+```shell
+cd Frontend
+npm run start
+
+Runs the app in the development mode.
+Listening on port 4001
+```
+---
+
+### Front End Test
+```shell
+cd Frontend
+npm run test
+```
+
+#### Local env
+
+node v18.11.0 (To use nvm to manage the node version)  
+npm 8.19.2
+
+#### Tecnhology
+
+React  
+Redux-toolkit (RTK)  
+Jest  
+React test library  
+antd  
+ 

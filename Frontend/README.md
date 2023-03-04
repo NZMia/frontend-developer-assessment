@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=plastic)](https://github.com/prettier/prettier)  
+[![code commit rule: commitlint](https://img.shields.io/badge/code_commite-commitlint-ff69b4.svg?style=plastic)](https://github.com/conventional-changelog/commitlint)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and for styling we've used [React-Bootstrap](https://react-bootstrap.github.io/getting-started/introduction)
+# TODO LIST
 
-## Available Scripts
+![development: DONE](https://img.shields.io/badge/development-DONE-informational.svg?style=plastic)
 
-In the project directory, you can run:
 
-### `npm start`
+https://user-images.githubusercontent.com/10533181/222932691-47826433-ab4c-426c-a963-e53e8f474b55.mov
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![image](https://user-images.githubusercontent.com/10533181/222932850-c7ce68c9-b3ff-47cb-b164-99fc1b9e353f.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### User Stories
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] The ability to surface any errors from the backend API in the UI
+- [x] The ability to mark an item in the to-do list as complete
+- [x] Add unit tests to cover the new functionality using a framework of your choice
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Installation is handle via [npm](https://docs.npmjs.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To create a new project based from this repo, simply run:
 
-### `npm run eject`
+#### Backend  
+```shell
+cd Backend/TodoList.Api/
+npm i
+```
+#### FrontEnd  
+```shell
+cd Frontend
+npm i
+```
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Backend  
+```shell
+cd Backend/TodoList.Api/
+npm run dev
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Runs the app in the development mode.
+Listening on port 4000
+```
 
-## Learn More
+#### FrontEnd  
+```shell
+cd Frontend
+npm run start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Runs the app in the development mode.  
+Open http://localhost:4001 to view it in your browser.
+```
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Front End Test
+```shell
+cd Frontend
+npm run test
+```
 
-### Code Splitting
+#### Local env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+node v18.11.0 (To use nvm to manage the node version)  
+npm 8.19.2
 
-### Analyzing the Bundle Size
+#### Tecnhology
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+React  
+Redux-toolkit (RTK)  
+Jest  
+React test library  
+antd  

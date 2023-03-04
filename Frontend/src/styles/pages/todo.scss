@@ -1,0 +1,13 @@
+@import '../utility';
+
+.todo__page {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: $medium;
+
+  @include respond(ipad) {
+    width: 80%;
+    max-width: $xlphone;
+  }
+}

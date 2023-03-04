@@ -1,22 +1,17 @@
-.App {
-  text-align: center;
+// Page
+@import './styles/pages/todo.scss';
+
+// Component
+@import './styles/components/todoItem.scss';
+
+#root {
+  height: 100vh;
+  width: 100vw;
 }
 
-.list-left {
-  text-align: left;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.myApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

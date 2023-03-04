@@ -3,6 +3,13 @@ import { Button, List, Checkbox } from 'antd';
 import { ITodoItemProps } from '../ts/interface';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 
+/**
+ * An List item component that allows the user to modify the item.
+ * @param {ITodoItemProps} props
+ * @action: {handleUpdate}: to change the check state.
+ * @action: {handleDelete}: to delete the item from list.
+ * @returns
+ */
 const TodoItem: React.FC<ITodoItemProps> = 
 ({ 
   todoItem,

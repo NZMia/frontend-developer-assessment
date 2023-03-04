@@ -54,8 +54,8 @@ Listening on port 4000
 cd Frontend
 npm run start
 
-Runs the app in the development mode.
-Listening on port 4001
+Runs the app in the development mode.  
+Open http://localhost:4001 to view it in your browser.
 ```
 ---
 

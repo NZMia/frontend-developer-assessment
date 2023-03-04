@@ -8,6 +8,7 @@
 
 https://user-images.githubusercontent.com/10533181/222932691-47826433-ab4c-426c-a963-e53e8f474b55.mov
 
+![image](https://user-images.githubusercontent.com/10533181/222932850-c7ce68c9-b3ff-47cb-b164-99fc1b9e353f.png)
 
 ### User Stories
 

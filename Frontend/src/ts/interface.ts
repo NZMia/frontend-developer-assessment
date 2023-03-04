@@ -14,3 +14,10 @@ export interface ITodoAddProps {
   button: React.ReactNode;
   errorMsg?: string
 }
+
+export interface ITodoItemProps {
+  todoItem: ITodoItem,
+  handleUpdate: (id:string, description:string, isCompleted: boolean) => void;
+  handleDelete: (id: string) => void
+}
+
